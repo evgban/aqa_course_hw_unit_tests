@@ -9,9 +9,9 @@
   let minAge = 18;
   let maxAge = 60;
   let age;
-  age = "22";
+  age = "124kj";
   let typeOfAgeIsNumber = Number(age);
-  if (typeof typeOfAgeIsNumber != "number") {
+  if (isNaN(typeOfAgeIsNumber)) {
     console.log("Incorrect data type");
   }
   else if (typeOfAgeIsNumber < minAge) {
