@@ -15,7 +15,7 @@
 
 let resultUnique = [];
 let resultNull = [];
-const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
+const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
 const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 let lowerCaseCompetitorPizzas = [];
