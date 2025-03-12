@@ -4,8 +4,15 @@
 */
 
 function isPalindrom(word) {
-  // Ваш код
+  if (typeof word == 'string') {
+word = word.toLowerCase();
+  return word === word.split('').reverse().join('');
+  } else {
+  return false;
+  }
+
 }
+console.log(isPalindrom('Алла'));
 
 /*
  2. findLongestWords()
@@ -15,7 +22,21 @@ function isPalindrom(word) {
 */
 
 function findLongestWords(sentence) {
-  // Ваш код
+  if (typeof sentence !== 'string' || sentence.length === 0) {
+    return [];
+  } else {
+  let arrayOfWords = sentence.split(' ');
+  let maxLength = 0;
+  for (let word of arrayOfWords) {
+    if (word.length > maxLength) {
+      maxLength = word.length;
+    }
+  }
+  let theLongestWord = arrayOfWords.filter(word => word.length === maxLength);
+  return theLongestWord;
 }
+}
+
+console.log(findLongestWords('Переменной было присвоено значение'));
 
 export { isPalindrom, findLongestWords };
