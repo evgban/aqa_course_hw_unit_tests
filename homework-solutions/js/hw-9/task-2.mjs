@@ -14,23 +14,51 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  // Ваш код
-}
+  if (typeof character.name === 'string' && typeof character.age === 'number') {
+    characters.push(character);
+    console.log(characters);
+  } else {
+    throw new Error('Invalid type of data');
+  }
+};
+addCharacter({name: 'Anna', age: 29});
 
 function getCharacter(name) {
-  // Ваш код
+  const character = characters.find(character => character.name === name);
+  return character;
 }
+let findCharacter = getCharacter('Fred');
+console.log(findCharacter);
 
 function getCharactersByAge(minAge) {
-  // Ваш код
+  if (typeof minAge !== 'number' || minAge < 0) {
+    throw new Error('Invalid age');
+  }
+  return characters.filter(character => character.age >= minAge);
 }
+console.log(getCharactersByAge(40));
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
+  const character = getCharacter(name);
+  if (character) {
+    character.name = newCharacter.name || character.name;
+    character.age = newCharacter.age || character.age;
+    console.log(characters);
+  } else {
+    throw new Error(`Character ${name} has not been found`);
+  }
 }
+updateCharacter('Jack', { name: 'Nick', age: 42 });
 
 function removeCharacter(name) {
-  // Ваш код
+  const index = characters.findIndex(character => character.name === name);
+  if (index !== -1) {
+    characters.splice(index, 1);
+    console.log(characters);
+  } else {
+    throw new Error(`Character ${name} has not been found`);
+  }
 }
+removeCharacter('Fred');
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
